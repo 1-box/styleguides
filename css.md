@@ -8,11 +8,58 @@
 
 ## ガイド
 
-* クラスの命名規則にBEMを使う。BEMの規則は[こちらの既約](https://github.com/juno/bem-methodology-ja)に準拠。
-    * materializeのクラス名に限ってはこれに準拠しない
+### クラスの命名規則
+
+* クラスの命名規則はBEMを用いる
+* materializeのクラス名に限ってはこれに準拠しない
+* できるだけCSSフレームワークで用意されているクラスを用いる
+* BEMの概要についてこちらを[参照](https://github.com/juno/bem-methodology-ja)
+
+#### Block
+
+Blockはデザインを構築する親の要素となるような要素。
+
+```css
+.item
+.item-list
+.form
+.form-search
+.form-search-item
+```
+
+#### Element
+
+Elementはデザインを構成する基本要素で、Blockに内包されます。
+Elementが集まったものがBlockになります。
+
+```css
+.item__text
+.item-list__btn
+.form__input
+.form-search__title
+.form-search-item__user
+```
+
+#### Modifier
+
+状態を表すときに使います。
+
+```css
+.item--red
+.item-list__btn--type_success
+.form__input--active
+.form-search__title--hover
+.form-search-result__user--following
+```
+
+### そのほか
+
 * CSSはクラスに記述する
-    * タグなどにCSSを当てない => 「打ち消すためのCSS」が増えて肥大化するため
+  * タグなどにCSSを当てない => 「打ち消すためのCSS」が増えて肥大化するため
 * 制限されたCSSを書かない => CSSの再利用性を高めるため
+* 使用する汎用クラス名はフレームワーク(materialize)で使われているのみ
+  * 自作クラスはBEMで
+  * そうすることでフレームワークのクラスとの判断もすぐにつけることができる
 
 ```css
 // NG
@@ -32,20 +79,17 @@ p.content
 
 * CSSプロパティはアルファベット順に並べる。mixinは最初
 * HTMLとCSSのインデントは半角スペース2文字
-* CSSのプロパティをまとめれるときはできるだけまとめる (marginなど)
+* CSSのプロパティはできるだけまとめる (marginなど)
 * Colorの16進数表記は3桁でも表せれる場合は3桁にする
 * CSSのネストは孫まで
-    * BEMできちんと命名していれば必要ない
-    * ネストが増えるとレンダリングの速度も落ちる
+  * BEMできちんと命名していればそもそもネストは必要ない
+  * ネストが増えるとレンダリングの速度も落ちる
 * コメントは単行コメントのみ使う
-    * コメントが入れ子になったりするのを防ぐ
+  * コメントが入れ子になったりするのを防ぐ
 * JSからアクセスする必要のあるクラスは、`js-hoge`と命名する。ただし、極力JSはIDを用いて指定する
 * インラインスタイルは使わない
 * `!important`は(極力)使わない
-    * 特にmaterializeのスタイルが多重に継承されている場合などに打ち消したいときなどには使ってもよいが、`!important`を使う時点でスタイルシートが複雑になっている可能性が高い
-* 使用する汎用クラス名はフレームワーク(materialize)で使われているのみ
-    * 自作クラスはBEMで
-    * そうすることでフレームワークのクラスとの判断もすぐにつけることができる
+  * 特にmaterializeのスタイルが多重に継承されている場合などに打ち消したいときなどには使ってもよいが、`!important`を使う時点でスタイルシートが複雑になっている可能性が高い
 
 ## 参考リンク
 
