@@ -84,6 +84,18 @@ p.content
 * HTMLとCSSのインデントは半角スペース2文字
 * CSSのプロパティはできるだけまとめる (marginなど)
 * Colorの16進数表記は3桁でも表せれる場合は3桁にする
+* Colorはuppercseで書く
+
+```css
+// NG
+.hoge
+  color: #ffffff
+
+// OK
+.hoge
+  color: #FFF
+```
+
 * コメントは単行コメントのみ使う
   * コメントが入れ子になったりするのを防ぐ
 * JSからアクセスする必要のあるクラスは、`js-hoge`と命名する。ただし、極力JSはIDを用いて指定する
