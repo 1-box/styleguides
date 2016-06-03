@@ -57,7 +57,7 @@ Elementが集まったものがBlockになります。
 * CSSはクラスに記述する
   * タグなどにCSSを当てない => 「打ち消すためのCSS」が増えて肥大化するため
 * 制限されたCSSを書かない => CSSの再利用性を高めるため
-* 使用する汎用クラス名はフレームワーク(materialize)で使われているのみ
+* 使用する汎用クラス名はフレームワーク([materialize](http://materializecss.com/))で使われているのみ
   * 自作クラスはBEMで
   * そうすることでフレームワークのクラスとの判断もすぐにつけることができる
 
@@ -88,7 +88,7 @@ p.content
   * materializeのカラーをHTMLのクラス名で指定
   * それができなければSASSの変数で指定
 * Colorの16進数表記は3桁でも表せれる場合は3桁にする
-* Colorはuppercseで書く
+* Colorはuppercaseで書く
 
 ```css
 // NG
